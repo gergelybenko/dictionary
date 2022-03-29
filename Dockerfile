@@ -27,7 +27,7 @@ RUN cd ${HOME} && \
     mkdir soci && tar -C soci -xvf soci.tar.gz --strip-components 1 && \
     cd soci && \
     cmake       -G "Unix Makefiles" \
-                -S . -B . \
+                --source . --build . \
                 -DSOCI_CXX11=ON \
                 -DWITH_BOOST=ON \
                 -DWITH_POSTGRESQL=ON \

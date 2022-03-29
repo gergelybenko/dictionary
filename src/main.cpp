@@ -1,9 +1,10 @@
 #include <iostream>
 #include <exception>
-#include <boost/log/trivial.hpp>
 
 #include "soci/soci.h"
 #include "soci/postgresql/soci-postgresql.h"
+
+#include <boost/log/trivial.hpp>
 
 int main( int argc, char** argv ) {
     try {
