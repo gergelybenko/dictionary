@@ -1,11 +1,17 @@
 version: "3.9"
 services:
-  dictionary:
-    build: .
-    links:
-      - postgres
   postgres:
     image: postgres
+    ports:
+      - '5432:5432'
     environment: 
-     - POSTGRES_USER=${DICT_POSTGRES_USER}
-     - POSTGRES_PASSWORD=${DICT_POSTGRES_PASS}
+      - POSTGRES_USER=${DICT_POSTGRES_USER}
+      - POSTGRES_PASSWORD=${DICT_POSTGRES_PASS}
+  dictionary:
+    build: .
+    stdin_open: true
+    tty: true
+    volumes:
+      - .:/usr/local/workspace
+    links:
+      - postgres

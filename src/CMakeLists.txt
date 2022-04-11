@@ -10,7 +10,7 @@ find_package( Boost REQUIRED COMPONENTS date_time log )
 find_package( SOCI REQUIRED )
 
 # Create main executable
-add_executable( ${MAIN_EXEC_NAME} main.cpp )
+add_executable( ${MAIN_EXEC_NAME} main.cpp DBHandler/database.cpp )
 
 target_compile_features( ${MAIN_EXEC_NAME} PRIVATE cxx_std_17 )
 
